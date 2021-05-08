@@ -29,7 +29,7 @@ Python App which chooses random movie from your Plex Library. Also you can send 
 
 - Google Chrome (You can access the app by any other browser on `localhost:4000`. But Chrome uses app module and it works out of the box)
 
-# Instalation
+# Installation
 
 1. Clone repo with this command:
 
