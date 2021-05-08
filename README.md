@@ -33,7 +33,7 @@ Python App which chooses random movie from your Plex Library. Also you can send 
 
 1. Clone repo with this command:
 
-    `git clone https://github.com/Akasiek/random-saved-album.git`
+    `git clone https://github.com/Akasiek/Random-Plex-Movie.git`
 
 2. Add your Plex credentials to the beginning of randomPlexMovie.py file. 
 
