@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plex Random Movie</title>
+
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+        <section id="section" class="hidden">
+
+            <div class="movie_container">
+                <div class="movie_poster">
+                    <img src="" alt="" id="poster_img">
+                </div>
+                <div class="movie_details">
+                    <p id="title"></p>
+                    <p id="year_duration"></p>
+                    <p id="directors"></p>
+                    <p id="writers"></p>
+                    <p id="actors"></p>
+                </div>
+
+            </div>
+
+            <div class="button_container">
+                <button onclick="chooseClient()" id="btn_next_movie" class="button">WATCH</button>
+                <button onclick="showMovieInHTML()" id="btn_watch" class="button">NEXT</button>
+            </div>
+
+            <div id="img_background"></div>
+
+        </section>
+
+        </div>
+
+        <div id="client_prompt" class="hidden">
+
+            <div id="client_prompt_close" onclick="closeClientPrompt()"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="42" height="42" viewBox="0 0 24 24">
+                    <path
+                        d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+                </svg></div>
+
+            <div id="container_list_of_clients">
+                <div id="list_of_clients"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
