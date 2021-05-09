@@ -10,21 +10,7 @@ Python App which chooses random movie from your Plex Library. Also you can send 
 # Needed stuff
 
 - Python 3
-- Pip and this libraries:
-
-    - PlexAPI (v4.5)
-    - Eel (v0.14)
-
-    Windows 
-    ```
-        pip install -r requirements.txt
-    ```
-
-    MacOS and Linux
-    ```
-        pip3 install -r requirements.txt
-    ```
-
+- Pip
 - Google Chrome (You can access the app by any other browser on `localhost:4000`. But Chrome uses app module and it works out of the box)
 
 # Installation
@@ -33,11 +19,21 @@ Python App which chooses random movie from your Plex Library. Also you can send 
 
     `git clone https://github.com/Akasiek/Random-Plex-Movie.git`
 
-2. Change config file with your Plex credentials. 
+2. Install required libraries:
 
-    ![alt text](https://i.imgur.com/Y7WjVLb.jpg "Second step of the installation")
+    Windows 
 
-3. Run Python file with this command
+    `pip install -r requirements.txt`
+
+    MacOS and Linux
+
+    `pip3 install -r requirements.txt`
+
+3. Change config file with your Plex credentials. 
+
+    ![alt text](https://i.imgur.com/Y7WjVLb.jpg "Third step of the installation")
+
+4. Run Python file with this command
 
     Windows (CMD)
 
@@ -49,11 +45,11 @@ Python App which chooses random movie from your Plex Library. Also you can send 
 
     This will start local web server on port 4000 and open Chrome App. If the port is colliding with something, you can change it in this line:
 
-    ![alt text](https://i.imgur.com/ABLhaJh.jpg "Third step of the installation")
+    ![alt text](https://i.imgur.com/ABLhaJh.jpg "Fourth step of the installation")
 
     After closing the app window, the program will stop running. You can change it by deleting argument "close_callback" in this line:
 
-    ![alt text](https://i.imgur.com/kcaZZgR.jpg "Third step of the installation")
+    ![alt text](https://i.imgur.com/kcaZZgR.jpg "Fourth step of the installation")
 
 ***
 
