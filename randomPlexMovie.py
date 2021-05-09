@@ -1,11 +1,9 @@
 import eel
 from eel import browsers
-from plexapi.myplex import MyPlexAccount
+from plexapi.server import PlexServer
 from random import randint
 import sys
 import configparser
-
-from plexapi.server import PlexServer
 
 # Plex authorization
 config = configparser.ConfigParser()
