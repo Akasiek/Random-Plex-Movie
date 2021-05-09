@@ -3,10 +3,15 @@ from eel import browsers
 from plexapi.myplex import MyPlexAccount
 from random import randint
 import sys
+import configparser
+
+from plexapi.server import PlexServer
 
 # Plex authorization
-account = MyPlexAccount('PLEX_E-MAIL', 'PLEX_PASSWORD')
-plex = account.resource('PLEX_SERVER_NAME').connect()
+config = configparser.ConfigParser()
+config.read('config/config.ini')
+
+plex = PlexServer(config['auth']['baseurl'], config['auth']['token'])
 movies = plex.library.section('Movies')
 
 # Initialising eel library in this directory
@@ -37,10 +42,12 @@ def randomUnwatchedMovie():
     directors = [chosen_movie.directors[d].tag for d in range(
         len(chosen_movie.directors))]
 
-    return {"title": chosen_movie.title, "year": chosen_movie.year,
+    return {"title": chosen_movie.title,
+            "year": chosen_movie.year,
             "duration_hours": int(chosen_movie_duration_hours),
-            "duration_minutes": int(chosen_movie_duration_minutes), "directors": directors,
-            "writers": writers, "actors": actors, "poster": chosen_movie.posterUrl,
+            "duration_minutes": int(chosen_movie_duration_minutes),
+            "directors": directors, "writers": writers, "actors": actors,
+            "poster": chosen_movie.posterUrl,
             "background": chosen_movie.artUrl
             }
 
