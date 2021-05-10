@@ -3,7 +3,7 @@ import sys
 import configparser
 from eel import browsers
 from plexapi.server import PlexServer
-from random import randint
+from random import randint, choice
 
 # Plex authorization
 config = configparser.ConfigParser()
@@ -23,13 +23,11 @@ def close_callback(path, list):
 
 
 def randomUnwatchedMovie():
-    '''Gets number of unwatched movies in library, assigns random number to each unwatched
-    movie. Pulls movie information and returns movie data for display'''
-    number_of_unwatched = len(movies.search(unwatched=True))
-    random_number_in_range = randint(0, number_of_unwatched-1)
+    '''Generates a list of unwatched movies. Randomly selects one to be displayed. 
+    Pulls movie information and returns movie data for display'''
 
     global chosen_movie
-    chosen_movie = movies.search(unwatched=True)[random_number_in_range]
+    chosen_movie = choice(movies.search(unwatched=True))
     chosen_movie_duration_hours = (chosen_movie.duration/(1000*60*60)) % 24
     chosen_movie_duration_minutes = (chosen_movie.duration/(1000*60)) % 60
 
@@ -59,9 +57,7 @@ def py_returnMovie():
 @ eel.expose
 def py_returnClients():
     '''Return list of clients to JS'''
-    clients = []
-    for client in plex.clients():
-        clients.append(client.title)
+    clients = [client.title for client in plex.clients()]
     return clients
 
 
