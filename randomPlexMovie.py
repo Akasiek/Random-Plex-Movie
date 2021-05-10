@@ -31,9 +31,9 @@ def randomUnwatchedMovie():
     chosen_movie_duration_hours = (chosen_movie.duration/(1000*60*60)) % 24
     chosen_movie_duration_minutes = (chosen_movie.duration/(1000*60)) % 60
 
-    writers = [chosen_movie.actors[w].tag for w in range(
+    actors = [chosen_movie.actors[a].tag for a in range(
         len(chosen_movie.actors))]
-    actors = [chosen_movie.writers[a].tag for a in range(
+    writers = [chosen_movie.writers[w].tag for w in range(
         len(chosen_movie.writers))]
     directors = [chosen_movie.directors[d].tag for d in range(
         len(chosen_movie.directors))]
