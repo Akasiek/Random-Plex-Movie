@@ -54,6 +54,10 @@ cd Random-Plex-Movie
     After closing the app window, the program will stop running. You can change it by deleting argument "close_callback" in this line:
 
     ![alt text](https://i.imgur.com/kcaZZgR.jpg "Fourth step of the installation")
+    
+    If you run into the `OSError: Can't find Google Chrome/Chromium installation` error, uncomment this line, enter the correct filepath to your Chrome install, and run the script again:
+    
+    ![alt text](https://i.imgur.com/VAhd7iF.png "Fourth step of the installation")
 
 ***
 
