@@ -55,7 +55,7 @@ cd Random-Plex-Movie
 
     ![alt text](https://i.imgur.com/kcaZZgR.jpg "Fourth step of the installation")
     
-    If you run into the `OSError: Can't find Google Chrome/Chromium installation` error, uncomment this line and run the script again:
+    If you run into the `OSError: Can't find Google Chrome/Chromium installation` error, uncomment this line, enter the correct filepath to your Chrome install, and run the script again:
     
     ![alt text](https://i.imgur.com/VAhd7iF.png "Fourth step of the installation")
 
