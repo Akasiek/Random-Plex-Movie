@@ -10,10 +10,10 @@ config = configparser.ConfigParser()
 config.read('config/config.ini')
 
 # If you get an OSError saying that the Chrome installation cannot be found,
-# change use_custom_path to True and specify the file path leading
-# to your Chrome installation directory.
-use_custom_path = False
-filepath = '/path/to/chrome.exe'
+# in the config.ini file, change 'useCustomPath' to True and specify the file path leading
+# to your Chrome installation directory in 'path'.
+use_custom_path = config.getboolean('set_path', 'useCustomPath')
+filepath = config['set_path']['path']
 
 plex = PlexServer(config['auth']['baseurl'], config['auth']['token'])
 movies = plex.library.section('Movies')
