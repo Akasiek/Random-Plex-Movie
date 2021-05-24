@@ -14,7 +14,9 @@ movies = plex.library.section('Movies')
 
 # Initialising eel library in this directory
 eel.init('web')
-
+# If you get the 'OSError: Can't find Google Chrome/Chromium installation' on Windows, uncomment this line.
+# Otherwise, leave this commented.
+# eel.browsers.set_path('chrome', '/mnt/c/Program Files/Google/Chrome/Application/chrome.exe')
 
 def close_callback(path, list):
     '''Exiting app when window is closed'''
@@ -23,7 +25,7 @@ def close_callback(path, list):
 
 
 def randomUnwatchedMovie():
-    '''Generates a list of unwatched movies. Randomly selects one to be displayed. 
+    '''Generates a list of unwatched movies. Randomly selects one to be displayed.
     Pulls movie information and returns movie data for display'''
 
     global chosen_movie
