@@ -55,9 +55,9 @@ cd Random-Plex-Movie
 
     ![alt text](https://i.imgur.com/kcaZZgR.jpg "Fourth step of the installation")
     
-    If you run into the `OSError: Can't find Google Chrome/Chromium installation` error, change use_custom_path to `True` and specify the file path leading to your Chrome installation directory by changing `filepath`.
+    If you run into the `OSError: Can't find Google Chrome/Chromium installation` error, in the config file, change useCustomPath to `True` and specify the file path leading to your Chrome installation directory by changing `path`.
     
-    ![alt text](https://i.imgur.com/WQXIVb7.jpg "Fourth step of the installation")
+    ![alt text](https://i.imgur.com/wCoEHhh.png "Fourth step of the installation")
 
 ***
 
