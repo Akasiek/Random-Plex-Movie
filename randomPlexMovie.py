@@ -9,14 +9,17 @@ from random import randint, choice
 config = configparser.ConfigParser()
 config.read('config/config.ini')
 
+# If you get an OSError saying that the Chrome installation cannot be found,
+# change use_custom_path to True and specify the file path leading
+# to your Chrome installation directory.
+use_custom_path = False
+filepath = '/path/to/chrome.exe'
+
 plex = PlexServer(config['auth']['baseurl'], config['auth']['token'])
 movies = plex.library.section('Movies')
 
 # Initialising eel library in this directory
 eel.init('web')
-# If you get the 'OSError: Can't find Google Chrome/Chromium installation' on Windows, uncomment this line.
-# Otherwise, leave this commented.
-# eel.browsers.set_path('chrome', '/mnt/c/Program Files/Google/Chrome/Application/chrome.exe')
 
 def close_callback(path, list):
     '''Exiting app when window is closed'''
@@ -68,6 +71,9 @@ def py_playMovie(client):
     '''Play movie if button was clicked and client was selected'''
     plex.client(client).playMedia(chosen_movie)
 
+# If using custom path, start accordingly.
+if use_custom_path == True:
+    eel.browsers.set_path('chrome', filepath)
 
 # Starting web server for app. Opening app window.
 eel.start('index.html',
