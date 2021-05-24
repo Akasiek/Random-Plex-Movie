@@ -15,11 +15,13 @@ config.read('config/config.ini')
 use_custom_path = config.getboolean('set_path', 'useCustomPath')
 filepath = config['set_path']['path']
 
+# Change the baseurl and token variables in config.ini file
 plex = PlexServer(config['auth']['baseurl'], config['auth']['token'])
 movies = plex.library.section('Movies')
 
 # Initialising eel library in this directory
 eel.init('web')
+
 
 def close_callback(path, list):
     '''Exiting app when window is closed'''
@@ -70,6 +72,7 @@ def py_returnClients():
 def py_playMovie(client):
     '''Play movie if button was clicked and client was selected'''
     plex.client(client).playMedia(chosen_movie)
+
 
 # If using custom path, start accordingly.
 if use_custom_path == True:
