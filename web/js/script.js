@@ -1,11 +1,12 @@
 // Main function which displays all movie data in the app
-async function showMovieInHTML() {
+// window.onload makes sure the function is run when the app starts up
+window.onload = document.getElementById('btn_watch').onclick = async function showMovieInHTML() {
     // Get movie data from python
     var py_movie = await eel.py_returnMovie()();
 
     // After loading all data, show content of the app
     document.getElementById("section").classList.remove("hidden");
-    
+
 
     // Changing data in HTML to movie details:
     // Title
@@ -41,25 +42,22 @@ async function showMovieInHTML() {
     });
     actors_p.innerHTML = actors_p.innerHTML.replace(/(\s+)?..$/, '');
 
-    // Poster    
+    // Poster
     document.getElementById("poster_img").src = py_movie["poster"];
 
     // BG Art
     document.getElementById("img_background").style.background = 'url(' + py_movie["background"] + ')';
 };
 
-// First movie search, immediately after app start
-showMovieInHTML();
 
-
-// This sections makes "WATCH" button works...
-// Hiddes client prompt
-function closeClientPrompt() {
+// This sections makes the "WATCH" button work...
+// Hides client prompt
+document.getElementById("client_prompt_close").addEventListener("click", function() {
     document.getElementById("client_prompt").classList.add("hidden");
-}
+});
 
 // Takes list of clients and display them as options for choosing where to watch content
-async function chooseClient() {
+document.getElementById("btn_next_movie").addEventListener("click", async function() {
     // Get list of clients from python
     var clients = await eel.py_returnClients()();
 
@@ -72,7 +70,7 @@ async function chooseClient() {
     clients.forEach(client => {
         document.getElementById("list_of_clients").innerHTML += "<div class=\"client\" onclick=\"playMovie('" + client + "');closeClientPrompt()\"><p>" + client + "</p></div>";
     });
-}
+});
 
 function playMovie(client) {
     // Does what the name says...
