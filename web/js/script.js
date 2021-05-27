@@ -52,9 +52,9 @@ window.onload = document.getElementById('btn_watch').onclick = async function sh
 
 // This sections makes the "WATCH" button work...
 // Hides client prompt
-document.getElementById("client_prompt_close").addEventListener("click", function() {
+function closeClientPrompt() {
     document.getElementById("client_prompt").classList.add("hidden");
-});
+}
 
 // Takes list of clients and display them as options for choosing where to watch content
 document.getElementById("btn_next_movie").addEventListener("click", async function() {
